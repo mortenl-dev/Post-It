@@ -2,12 +2,17 @@ namespace WinFormsApp2
 {
     public partial class Form1 : Form
     {
+        UserControl3 button;
         public Form1()
         {
             InitializeComponent();
-            createNewList();
+            
+            button = new UserControl3(this);
 
+            createNewList();
         }
+
+        
         int tasksCount = 0;
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -15,15 +20,12 @@ namespace WinFormsApp2
         }
         private void createNewList()
         {
-            TextBoxUC tb = new TextBoxUC();
-            CheckboxUC cb = new CheckboxUC();
-            tableLayoutPanel1.RowCount++;
-            tableLayoutPanel1.Controls.Add(cb, 0, 0);
-            tableLayoutPanel1.Controls.Add(tb, 1, 0);
+            tableLayoutPanel1.Controls.Add(button,0,0);
             tasksCount++;
         }
-        private void addTask()
+        public void addTask()
         {
+            tableLayoutPanel1.SetRow(button, tasksCount + 1);
             TextBoxUC tb = new TextBoxUC();
             CheckboxUC cb = new CheckboxUC();
             tableLayoutPanel1.RowCount++;
@@ -42,9 +44,5 @@ namespace WinFormsApp2
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            addTask();
-        }
     }
 }

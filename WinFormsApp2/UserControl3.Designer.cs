@@ -1,6 +1,6 @@
 ﻿namespace WinFormsApp2
 {
-    partial class TextBoxUC
+    partial class UserControl3
     {
         /// <summary> 
         /// Required designer variable.
@@ -28,32 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            usercontroltb = new TextBox();
+            ButtonUC = new Button();
             SuspendLayout();
             // 
-            // usercontroltb
+            // ButtonUC
             // 
-            usercontroltb.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            usercontroltb.Location = new Point(3, 3);
-            usercontroltb.Margin = new Padding(0);
-            usercontroltb.Name = "usercontroltb";
-            usercontroltb.Size = new Size(301, 27);
-            usercontroltb.TabIndex = 0;
+            ButtonUC.Location = new Point(4, 1);
+            ButtonUC.Name = "ButtonUC";
+            ButtonUC.Size = new Size(94, 29);
+            ButtonUC.TabIndex = 0;
+            ButtonUC.Text = "button1";
+            ButtonUC.UseVisualStyleBackColor = true;
+            ButtonUC.Click += ButtonUC_Click;
             // 
-            // TextBoxUC
+            // UserControl3
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            Controls.Add(usercontroltb);
-            Name = "TextBoxUC";
-            Size = new Size(304, 35);
-            Load += TextBoxUC_Load;
+            Controls.Add(ButtonUC);
+            Name = "UserControl3";
+            Size = new Size(150, 32);
+            Load += UserControl3_Load;
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
 
-        private TextBox usercontroltb;
+        private Button ButtonUC;
     }
 }
